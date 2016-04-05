@@ -4,9 +4,10 @@ gradle/
 gradlew
 gradlew.bat
 
-#Anroid Studio
+#Android Studio
 .idea/
 *.iml
 app/build
 build/
 local.properties
+
