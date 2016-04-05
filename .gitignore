@@ -1,0 +1,12 @@
+#Gradle
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+
+#Anroid Studio
+.idea/
+*.iml
+app/build
+build/
+local.properties
