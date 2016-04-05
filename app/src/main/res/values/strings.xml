@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Coffee Informer</string>
+    <string name="beverage_tab_title">Beverage info</string>
+    <string name="beans_tab_title">Beans info</string>
+    <string name="barista_tab_title">Barista info</string>
+</resources>
