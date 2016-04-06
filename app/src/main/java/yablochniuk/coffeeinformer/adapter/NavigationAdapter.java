@@ -1,4 +1,4 @@
-package com.yablochniuk.coffeeinformer.view.adapter;
+package yablochniuk.coffeeinformer.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

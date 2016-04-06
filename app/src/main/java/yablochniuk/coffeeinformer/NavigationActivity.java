@@ -1,4 +1,4 @@
-package com.yablochniuk.coffeeinformer.view;
+package yablochniuk.coffeeinformer;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -6,7 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.yablochniuk.coffeeinformer.R;
-import com.yablochniuk.coffeeinformer.view.adapter.NavigationAdapter;
+
+import yablochniuk.coffeeinformer.adapter.NavigationAdapter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

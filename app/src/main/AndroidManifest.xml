@@ -9,7 +9,7 @@
         android:theme="@style/CoffeeInformerTheme">
 
         <activity
-            android:name=".view.NavigationActivity">
+            android:name="yablochniuk.coffeeinformer.NavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

@@ -1,4 +1,4 @@
-package com.yablochniuk.coffeeinformer.view;
+package yablochniuk.coffeeinformer;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

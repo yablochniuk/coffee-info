@@ -1,4 +1,4 @@
-package com.yablochniuk.coffeeinformer.view;
+package yablochniuk.coffeeinformer;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,10 +12,10 @@ import com.yablochniuk.coffeeinformer.R;
 /**
  * Created by Vitalii Yablochniuk on 3/29/16
  */
-public class BaristaFragment extends Fragment {
+public class BeansFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.barista_fragment,container, false);
+        return inflater.inflate(R.layout.beans_fragment, container, false);
     }
 }
