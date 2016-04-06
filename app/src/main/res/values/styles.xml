@@ -1,9 +1,9 @@
 <resources>
 
-    <style name="CoffeeInformerTheme" parent="CoffeeInformerTheme.Base"/>
+    <style name="CoffeeInfoTheme" parent="CoffeeInfoTheme.Base"/>
 
     <!-- Base application theme. -->
-    <style name="CoffeeInformerTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="CoffeeInfoTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
