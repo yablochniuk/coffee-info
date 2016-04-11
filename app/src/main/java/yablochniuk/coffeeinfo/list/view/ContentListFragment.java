@@ -22,7 +22,8 @@ import yablochniuk.coffeeinfo.list.presenter.RequestCoffeeListPresenter;
  */
 public abstract class ContentListFragment extends Fragment implements CoffeeListView {
 
-    private RecyclerView contentList;
+    private RecyclerView mContentView;
+    private ContentListAdapter mContentAdapter;
     private RequestCoffeeListPresenter mPresenter;
 
     @Override
@@ -36,19 +37,24 @@ public abstract class ContentListFragment extends Fragment implements CoffeeList
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.content_list_fragment, container, false);
-        contentList = (RecyclerView) view.findViewById(R.id.content_list);
-        contentList.setHasFixedSize(true);
-        
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 5);
-
-        contentList.setLayoutManager(layoutManager);
-
+        mContentView = (RecyclerView) view.findViewById(R.id.content_list);
+        mContentView.setHasFixedSize(true);
         return view;
     }
 
     @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 5);
+        mContentView.setLayoutManager(layoutManager);
+        mContentAdapter = new ContentListAdapter();
+        mContentView.setAdapter(mContentAdapter);
+    }
+
+    @Override
     public void showContent(List<ContentData> content) {
-        contentList.setAdapter(new ContentListAdapter(content));
+        mContentAdapter.setContent(content);
+        mContentAdapter.notifyDataSetChanged();
     }
 
     @Override

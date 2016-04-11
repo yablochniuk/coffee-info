@@ -20,8 +20,8 @@ public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.
 
     private List<ContentData> mContentData;
 
-    public ContentListAdapter(List<ContentData> data) {
-        mContentData = data;
+    public void setContent(List<ContentData> content) {
+        mContentData = content;
     }
 
     @Override
