@@ -13,12 +13,10 @@ import yablochniuk.coffeeinfo.list.view.ContentListFragment;
  */
 public class BeansFragment extends ContentListFragment {
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = super.onCreateView(inflater, container, savedInstanceState);
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         getPresenter().loadBeans();
-        return v;
     }
 }
 
