@@ -1,4 +1,4 @@
-package yablochniuk.coffeeinfo;
+package yablochniuk.coffeeinfo.list.model;
 
 /**
  * Created by Vitalii Yablochniuk on 4/6/16

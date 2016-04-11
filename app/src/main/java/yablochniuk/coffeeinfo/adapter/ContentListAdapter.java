@@ -11,8 +11,7 @@ import com.yablochniuk.coffeeinformer.R;
 
 import java.util.List;
 
-import yablochniuk.coffeeinfo.ContentData;
-import yablochniuk.coffeeinfo.ContentListFragment;
+import yablochniuk.coffeeinfo.list.model.ContentData;
 
 /**
  * Created by Vitalii Yablochniuk on 4/6/16

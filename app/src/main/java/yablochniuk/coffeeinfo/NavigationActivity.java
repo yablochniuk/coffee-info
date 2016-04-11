@@ -11,6 +11,8 @@ import yablochniuk.coffeeinfo.adapter.NavigationAdapter;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import yablochniuk.coffeeinfo.list.view.BeansFragment;
+import yablochniuk.coffeeinfo.list.view.BeverageFragment;
 
 /**
  * Created by Vitalii Yablochniuk on 3/29/16
