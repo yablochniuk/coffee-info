@@ -1,4 +1,4 @@
-package yablochniuk.coffeeinfo.adapter;
+package yablochniuk.coffeeinfo.list.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

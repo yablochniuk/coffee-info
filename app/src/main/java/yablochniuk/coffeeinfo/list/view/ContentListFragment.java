@@ -13,7 +13,6 @@ import com.yablochniuk.coffeeinformer.R;
 
 import java.util.List;
 
-import yablochniuk.coffeeinfo.adapter.ContentListAdapter;
 import yablochniuk.coffeeinfo.list.model.ContentData;
 import yablochniuk.coffeeinfo.list.presenter.CoffeeListPresenter;
 import yablochniuk.coffeeinfo.list.presenter.RequestCoffeeListPresenter;
