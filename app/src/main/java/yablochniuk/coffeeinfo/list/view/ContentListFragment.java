@@ -45,7 +45,7 @@ public abstract class ContentListFragment extends Fragment implements CoffeeList
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 5);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         mContentView.setLayoutManager(layoutManager);
         mContentAdapter = new ContentListAdapter();
         mContentView.setAdapter(mContentAdapter);
