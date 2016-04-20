@@ -27,7 +27,7 @@ public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.content_card, parent, false);
+                .inflate(R.layout.content_item, parent, false);
         return new ViewHolder(v);
     }
 

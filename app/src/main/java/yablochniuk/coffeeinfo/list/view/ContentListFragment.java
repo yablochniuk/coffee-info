@@ -1,10 +1,14 @@
 package yablochniuk.coffeeinfo.list.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,8 +49,10 @@ public abstract class ContentListFragment extends Fragment implements CoffeeList
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
+        RecyclerView.LayoutManager layoutManager = new CoffeeGridLayoutManger(getContext(),
+                (int) (400 * getResources().getSystem().getDisplayMetrics().density));
         mContentView.setLayoutManager(layoutManager);
+        mContentView.addItemDecoration(new ContentItemDecoration(getContext()));
         mContentAdapter = new ContentListAdapter();
         mContentView.setAdapter(mContentAdapter);
     }
@@ -69,5 +75,30 @@ public abstract class ContentListFragment extends Fragment implements CoffeeList
 
     protected RequestCoffeeListPresenter getPresenter() {
         return mPresenter;
+    }
+
+    private static class CoffeeGridLayoutManger extends GridLayoutManager {
+
+        private int minItemWidth;
+
+        public CoffeeGridLayoutManger(Context context, int minItemWidth) {
+            super(context, 1);
+            this.minItemWidth = minItemWidth;
+        }
+
+        @Override
+        public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
+            updateSpanCount();
+            super.onLayoutChildren(recycler, state);
+        }
+
+
+        private void updateSpanCount() {
+            int spanCount = getWidth() / minItemWidth;
+            if (spanCount < 1) {
+                spanCount = 1;
+            }
+            this.setSpanCount(spanCount);
+        }
     }
 }
