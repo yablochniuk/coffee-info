@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,11 +18,15 @@ import yablochniuk.coffeeinfo.list.model.ContentData;
 import yablochniuk.coffeeinfo.list.presenter.CoffeeListPresenter;
 import yablochniuk.coffeeinfo.list.presenter.RequestCoffeeListPresenter;
 
+import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
+
 /**
  * Created by Vitalii Yablochniuk on 4/6/16
  */
 public abstract class ContentListFragment extends Fragment implements CoffeeListView {
 
+    public static final int COLUMNS_LANDSCAPE = 3;
+    private static final int COLUMNS_PORTRAIT = 2;
     private RecyclerView mContentView;
     private ContentListAdapter mContentAdapter;
     private RequestCoffeeListPresenter mPresenter;
@@ -49,8 +50,7 @@ public abstract class ContentListFragment extends Fragment implements CoffeeList
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView.LayoutManager layoutManager = new CoffeeGridLayoutManger(getContext(),
-                (int) (400 * getResources().getSystem().getDisplayMetrics().density));
+        RecyclerView.LayoutManager layoutManager = createLayoutManager();
         mContentView.setLayoutManager(layoutManager);
         mContentView.addItemDecoration(new ContentItemDecoration(getContext()));
         mContentAdapter = new ContentListAdapter();
@@ -77,28 +77,14 @@ public abstract class ContentListFragment extends Fragment implements CoffeeList
         return mPresenter;
     }
 
-    private static class CoffeeGridLayoutManger extends GridLayoutManager {
 
-        private int minItemWidth;
-
-        public CoffeeGridLayoutManger(Context context, int minItemWidth) {
-            super(context, 1);
-            this.minItemWidth = minItemWidth;
+    private RecyclerView.LayoutManager createLayoutManager() {
+        int orientation = getResources().getConfiguration().orientation;
+        int columns = COLUMNS_PORTRAIT;
+        if (orientation == COLUMNS_LANDSCAPE) {
+            columns = COLUMNS_LANDSCAPE;
         }
 
-        @Override
-        public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
-            updateSpanCount();
-            super.onLayoutChildren(recycler, state);
-        }
-
-
-        private void updateSpanCount() {
-            int spanCount = getWidth() / minItemWidth;
-            if (spanCount < 1) {
-                spanCount = 1;
-            }
-            this.setSpanCount(spanCount);
-        }
+        return new GridLayoutManager(getContext(), columns);
     }
 }

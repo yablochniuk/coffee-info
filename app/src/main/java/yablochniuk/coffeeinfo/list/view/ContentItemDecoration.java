@@ -12,15 +12,15 @@ import com.yablochniuk.coffeeinformer.R;
  */
 public class ContentItemDecoration extends RecyclerView.ItemDecoration {
 
-    private int margin;
+    private int padding;
 
     public ContentItemDecoration(Context context) {
-        margin = context.getResources().getDimensionPixelSize(R.dimen.item_margin);
+        padding = context.getResources().getDimensionPixelSize(R.dimen.item_padding);
     }
 
     @Override
     public void getItemOffsets(
             Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        outRect.set(margin, margin, margin, margin);
+        outRect.set(padding, padding, padding, padding);
     }
 }

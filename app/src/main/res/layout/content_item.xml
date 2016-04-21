@@ -1,8 +1,8 @@
-<LinearLayout
+<yablochniuk.coffeeinfo.list.view.SquareLinearLayout
     android:id="@+id/card_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="400dp"
-    android:layout_height="400dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@android:color/black"
     android:orientation="vertical" >
 
@@ -20,4 +20,4 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"/>
 
-</LinearLayout>
+</yablochniuk.coffeeinfo.list.view.SquareLinearLayout>
