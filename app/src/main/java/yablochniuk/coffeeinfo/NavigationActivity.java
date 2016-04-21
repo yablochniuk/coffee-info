@@ -36,7 +36,7 @@ public class NavigationActivity extends AppCompatActivity {
         NavigationAdapter adapter = new NavigationAdapter(getSupportFragmentManager());
         adapter.addItem(new BeverageFragment(), getString(R.string.beverage_tab_title));
         adapter.addItem(new BeansFragment(), getString(R.string.beans_tab_title));
-        adapter.addItem(new BaristaFragment(), getString(R.string.barista_tab_title));
+//        adapter.addItem(new BaristaFragment(), getString(R.string.barista_tab_title));
         viewPager.setAdapter(adapter);
     }
 }
