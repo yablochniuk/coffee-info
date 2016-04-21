@@ -1,6 +1,7 @@
 package yablochniuk.coffeeinfo.list.view;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -81,7 +82,7 @@ public abstract class ContentListFragment extends Fragment implements CoffeeList
     private RecyclerView.LayoutManager createLayoutManager() {
         int orientation = getResources().getConfiguration().orientation;
         int columns = COLUMNS_PORTRAIT;
-        if (orientation == COLUMNS_LANDSCAPE) {
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             columns = COLUMNS_LANDSCAPE;
         }
 
