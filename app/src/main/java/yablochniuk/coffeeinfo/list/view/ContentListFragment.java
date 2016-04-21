@@ -51,9 +51,12 @@ public abstract class ContentListFragment extends Fragment implements CoffeeList
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView.LayoutManager layoutManager = createLayoutManager();
+        int spanCount = getSpanCount();
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), spanCount);
+        RecyclerView.ItemDecoration itemDecoration = new ContentItemDecoration(getContext(), spanCount);
+
         mContentView.setLayoutManager(layoutManager);
-        mContentView.addItemDecoration(new ContentItemDecoration(getContext()));
+        mContentView.addItemDecoration(itemDecoration);
         mContentAdapter = new ContentListAdapter();
         mContentView.setAdapter(mContentAdapter);
     }
@@ -78,14 +81,12 @@ public abstract class ContentListFragment extends Fragment implements CoffeeList
         return mPresenter;
     }
 
-
-    private RecyclerView.LayoutManager createLayoutManager() {
+    private int getSpanCount() {
         int orientation = getResources().getConfiguration().orientation;
         int columns = COLUMNS_PORTRAIT;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             columns = COLUMNS_LANDSCAPE;
         }
-
-        return new GridLayoutManager(getContext(), columns);
+        return columns;
     }
 }

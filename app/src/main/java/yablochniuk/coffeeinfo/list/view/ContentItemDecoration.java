@@ -13,14 +13,25 @@ import com.yablochniuk.coffeeinformer.R;
 public class ContentItemDecoration extends RecyclerView.ItemDecoration {
 
     private int padding;
+    private int spanCount;
 
-    public ContentItemDecoration(Context context) {
+    public ContentItemDecoration(Context context, int spanCount) {
+        this.spanCount = spanCount;
         padding = context.getResources().getDimensionPixelSize(R.dimen.item_padding);
     }
 
     @Override
     public void getItemOffsets(
             Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        outRect.set(padding, padding, padding, padding);
+        int position = parent.getChildLayoutPosition(view);
+        int column = position % spanCount;
+
+        outRect.left = padding - column * padding / spanCount;
+        outRect.right = (column + 1) * padding / spanCount;
+
+        if (position < spanCount) {
+            outRect.top = padding;
+        }
+        outRect.bottom = padding;
     }
 }
