@@ -9,8 +9,6 @@ import com.yablochniuk.coffeeinformer.R;
 
 import yablochniuk.coffeeinfo.adapter.NavigationAdapter;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 import yablochniuk.coffeeinfo.list.view.BeansFragment;
 import yablochniuk.coffeeinfo.list.view.BeverageFragment;
 
@@ -19,14 +17,13 @@ import yablochniuk.coffeeinfo.list.view.BeverageFragment;
  */
 public class NavigationActivity extends AppCompatActivity {
 
-    @Bind(R.id.tabs) TabLayout mTabLayout;
-    @Bind(R.id.viewpager) ViewPager mViewPager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_content);
-        ButterKnife.bind(this);
+
+        TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.viewpager);
 
         setupViewPager(mViewPager);
         mTabLayout.setupWithViewPager(mViewPager);
