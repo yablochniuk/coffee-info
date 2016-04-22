@@ -1,5 +1,7 @@
 package yablochniuk.coffeeinfo.list.model;
 
+import android.support.annotation.DrawableRes;
+
 /**
  * Created by Vitalii Yablochniuk on 4/6/16
  */
@@ -16,6 +18,7 @@ public class ContentData {
         return title;
     }
 
+    @DrawableRes
     public int getImage() {
         return image;
     }

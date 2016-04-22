@@ -1,5 +1,9 @@
 package yablochniuk.coffeeinfo.list.view;
 
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,9 +39,19 @@ public class ContentListAdapter extends RecyclerView.Adapter<ContentListAdapter.
     public void onBindViewHolder(ViewHolder holder, int position) {
         int i = mContentData.get(position).getImage();
         String  t = mContentData.get(position).getTitle();
-
         holder.image.setImageResource(i);
         holder.title.setText(t);
+
+        Resources resources = holder.image.getResources();
+        Bitmap image = BitmapFactory.decodeResource(resources, i);
+
+        Palette.from(image).generate(palette -> {
+            Palette.Swatch vibrant = palette.getVibrantSwatch();
+            if (vibrant != null) {
+                holder.title.setBackgroundColor(vibrant.getRgb());
+                holder.title.setTextColor(vibrant.getTitleTextColor());
+            }
+        });
     }
 
     @Override
