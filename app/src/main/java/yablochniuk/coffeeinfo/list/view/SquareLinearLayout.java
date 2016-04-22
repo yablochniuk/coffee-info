@@ -4,12 +4,13 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 /**
  * Created by Vitalii Yablochniuk on 4/21/16
  */
-public class SquareLinearLayout extends LinearLayout {
+public class SquareLinearLayout extends ImageView {
     public SquareLinearLayout(Context context) {
         super(context);
     }

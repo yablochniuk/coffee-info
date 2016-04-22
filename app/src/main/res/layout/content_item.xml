@@ -1,23 +1,26 @@
-<yablochniuk.coffeeinfo.list.view.SquareLinearLayout
+<LinearLayout
     android:id="@+id/card_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@android:color/black"
     android:orientation="vertical" >
 
-    <ImageView
+    <yablochniuk.coffeeinfo.list.view.SquareLinearLayout
         android:id="@+id/image"
         android:contentDescription="@string/coffee_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <TextView
         android:id="@+id/title"
-        android:layout_gravity="bottom"
-        android:padding="8dp"
-        android:textColor="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="48dp"/>
+        android:layout_height="@dimen/item_text_height"
+        android:layout_gravity="bottom"
+        android:paddingLeft="@dimen/item_text_padding"
+        android:paddingRight="@dimen/item_text_padding"
+        android:gravity="start|center_vertical"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/item_text_size" />
 
-</yablochniuk.coffeeinfo.list.view.SquareLinearLayout>
+</LinearLayout>
