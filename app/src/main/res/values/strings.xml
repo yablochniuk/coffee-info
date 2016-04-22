@@ -4,4 +4,17 @@
     <string name="beans_tab_title">Beans info</string>
     <string name="barista_tab_title">Barista info</string>
     <string name="coffee_image">Coffee image</string>
+
+    <string name="espresso">Espresso</string>
+    <string name="cappuccino">Cappuccino</string>
+    <string name="latte">Latte</string>
+    <string name="mocha">Mocha</string>
+
+    <string name="beans_india">India</string>
+    <string name="beans_java">Java</string>
+    <string name="beans_cuba">Cuba</string>
+    <string name="beans_jamaica">Jamaica</string>
+    <string name="beans_brazil">Brazil</string>
+    <string name="beans_puerto_rico">Puerto Rico</string>
+
 </resources>
