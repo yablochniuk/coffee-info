@@ -7,7 +7,7 @@
     <dimen name="tab_padding_bottom">16dp</dimen>
     <dimen name="tab_label">14sp</dimen>
 
-    <dimen name="item_padding">1dp</dimen>
+    <dimen name="item_padding">4dp</dimen>
     <dimen name="item_text_height">48dp</dimen>
     <dimen name="item_text_padding">16dp</dimen>
     <dimen name="item_text_size">16sp</dimen>
